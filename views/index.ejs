@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <form enctype="multipart/form-data" action="/upload" method="POST" enctype="multipart/form-data" class="max-w-md mx-auto mt-8">
+        <div class="mb-4">
+            <label for="file-upload" class="block text-gray-700 text-sm font-bold mb-2">
+                Choose a file:
+            </label>
+            <input type="file" id="file-upload" name="image" 
+                class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+        </div>
+        <div>
+            <button type="submit" 
+                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+                Upload
+            </button>
+        </div>
+        <% if (imageUrl) { %>
+            <div class="mt-6">
+              <h2 class="text-lg font-medium">Uploaded Image:</h2>
+              <img src="<%= imageUrl %>" alt="Profile Image" class="mt-4 w-32 h-32 rounded-full object-cover" />
+            </div>
+          <% } %>
+    </form>
+
+
+</body>
+</html>
